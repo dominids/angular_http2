@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     this.onGetUsers();
     //this.onGetUsers2();
     //this.onGetUsers3();
-    //this.onGetUser();
+    ///this.onGetUser();
     //this.onCreateUser();
     //this.onDeleteUser();
     //this.onTextFile();
