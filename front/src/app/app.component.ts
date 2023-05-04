@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //this.onUpdateUser();
     //this.onPatchUser();
-    //this.onGetUsers();
+    this.onGetUsers();
     //this.onGetUsers2();
     //this.onGetUsers3();
     ///this.onGetUser();

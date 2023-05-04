@@ -15,7 +15,7 @@ export class TestInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const API_TOKEN ='feterytyutrewtyrytref';
     const requestCopy=request.
-    clone({setHeaders: {API_KEY: API_TOKEN}, body: {hello: 'world'}})
+    clone({setHeaders: {API_KEY: API_TOKEN}})
     console.log(requestCopy);
     return next.handle(requestCopy);
   }
