@@ -9,7 +9,8 @@ import { User } from '../interface/user';
 
 export class UserService {
 
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  // private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  private apiUrl = 'http://localhost:5000/api/users';
   readonly moreParams = ['test', 'test2'];
   readonly deafultImage= 'https://robohash.org';
 
@@ -41,15 +42,13 @@ export class UserService {
     return this.http.get<User[]>(`${this.apiUrl}`)
     .pipe(
       tap(users => console.log(users)),
-      
       map(users => users.map(user => ({
         email: user.email,
-        website: user.website,
         phone: user.phone,
         image: `${this.deafultImage}/${user.username.toLowerCase()}`,
-        username: user.name,
+        username: user.username,
         name: user.name.toUpperCase(),
-        isAdmin: user.id === 10? 'admin': 'user',
+        isAdmin: user._id === "10"? 'admin': 'user',
         searchKey: [user.name, user.username]
       }))) //transformation
     );
@@ -74,12 +73,12 @@ export class UserService {
   updateUser(user: User): Observable<User> {
     //put musisz dać wszystkie wartości bo reszta będzie domyślna
     // różni się w zależności od api
-    return this.http.put<User>(`${this.apiUrl}/${user.id}`, user)
+    return this.http.put<User>(`${this.apiUrl}/${user._id}`, user)
   }
 
   patchUser(user: User): Observable<User> {
     //patch nie  musisz dać wszystkie wartości
-    return this.http.patch<User>(`${this.apiUrl}/${user.id}`, user)
+    return this.http.patch<User>(`${this.apiUrl}/${user._id}`, user)
   }
 
   deleteUser(id: number): Observable<void> {

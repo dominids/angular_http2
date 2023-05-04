@@ -1,17 +1,11 @@
-
-import { Address } from "./adress";
-import {Company} from "./company";
-
-
-
 export interface User {
-    id?: number;
+    _id?: string;
     name: string;
     username: string;
     email: string;
-    address?: Address;
     image?: string;
     phone: string;
-    website: string;
-    company?: Company;
+    createdAt?: string;
+    updatedAt?: string;
+    __v?: number;
 }

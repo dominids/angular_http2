@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
-    id: { //scam
-        type: Number,
-        require: true,
-    },
     name: {
         type: String,
         required: [true, "Please add the user name"],

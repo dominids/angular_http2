@@ -12,30 +12,14 @@ export class AppComponent implements OnInit {
   title = 'angularhttp';
 
   private user: User = {
-    'id': 10,
+    '_id': "5",
     'name': 'Lmao Graham',
     'username': 'Lmao',
     'email': 'pierre@april.biz',
-    'address': {
-      'street': 'Kulas Light',
-      'suite': 'Apt. 556',
-      'city': 'Gwenborough',
-      'zipcode': '92998-3874',
-      'geo': {
-        'lat': '-37.3159',
-        'lng': '81.1496'
-      }
-    },
     'phone': '1-770-736-8031 x56442',
-    'website': 'hildegard.org',
-    'company': {
-      'name': 'pierrrrr',
-      'catchPhrase': 'Multi-layered client-server neural-net',
-      'bs': 'harness real-time e-markets'
-    }
   }
   private user1: any = {
-    'id': 2,
+    '_id': "2",
     'name': 'teast Graham',
     'username': 'Lmao',
     'email': 'pierre@april.biz',
@@ -58,7 +42,7 @@ export class AppComponent implements OnInit {
     this.userService.getUsers().subscribe(
       (response) => {
         console.table(response);
-        this.users=response;
+        this.users = response;
       },
       (error: any) => console.log(error),
       () => console.log('Done getting users')
