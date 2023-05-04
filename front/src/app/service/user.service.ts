@@ -68,9 +68,10 @@ export class UserService {
 
   createUser(user: User): Observable<User> {
     console.log(user);
-    // const headers = new HttpHeaders()
-    //   .set('Content-Type', 'application/json');
-    return this.http.post<User>(`${this.apiUrl}`, user)
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.post<User>(`${this.apiUrl}`, user, httpOptions)
   }
 
   updateUser(user: User): Observable<User> {
