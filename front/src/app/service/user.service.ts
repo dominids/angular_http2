@@ -67,6 +67,9 @@ export class UserService {
   }
 
   createUser(user: User): Observable<User> {
+    console.log(user);
+    // const headers = new HttpHeaders()
+    //   .set('Content-Type', 'application/json');
     return this.http.post<User>(`${this.apiUrl}`, user)
   }
 
@@ -81,7 +84,7 @@ export class UserService {
     return this.http.patch<User>(`${this.apiUrl}/${user._id}`, user)
   }
 
-  deleteUser(id: number): Observable<void> {
+  deleteUser(id: string): Observable<void> {
     //delete daje ci najczęściej boolean^
     //void bo nic nie dostajemy w odpowiedzi od servera 
     return this.http.delete<void>(`${this.apiUrl}/${id}`)

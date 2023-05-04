@@ -12,17 +12,16 @@ export class AppComponent implements OnInit {
   title = 'angularhttp';
 
   private user: User = {
-    '_id': "5",
-    'name': 'Lmao Graham',
-    'username': 'Lmao',
-    'email': 'pierre@april.biz',
-    'phone': '1-770-736-8031 x56442',
+    "name": "dddd",
+    "username": "Mark",
+    "email": "mark3@gmail.com",
+    "phone": "1234567",
   }
   private user1: any = {
-    '_id': "2",
-    'name': 'teast Graham',
-    'username': 'Lmao',
-    'email': 'pierre@april.biz',
+    name: "User",
+    username: "username",
+    email: "normalUser@gmail.com",
+    phone: "2137420",
   }
 
   constructor(private userService: UserService) { }
@@ -34,7 +33,7 @@ export class AppComponent implements OnInit {
     //this.onGetUsers2();
     //this.onGetUsers3();
     ///this.onGetUser();
-    //this.onCreateUser();
+    this.onCreateUser();
     //this.onDeleteUser();
     //this.onTextFile();
   }
@@ -103,7 +102,7 @@ export class AppComponent implements OnInit {
     )
   }
   onDeleteUser(): void {
-    this.userService.deleteUser(5).subscribe(
+    this.userService.deleteUser("idd").subscribe(
       (response) => console.log('Response from delete: ', response),
       (error: any) => console.log(error),
       () => console.log('Done deleting users')

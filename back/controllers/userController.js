@@ -13,7 +13,7 @@ const getUsers = asyncHandler(async (req, res) => {
 //@access  public
 const createUser = asyncHandler(async (req, res) => {
     console.log("The req body is:", req.body);
-    const { id, name, username, email, phone } = req.body;
+    const {name, username, email, phone } = req.body;
     if (!username || !name || !email || !phone) {
         res.status(400);
         throw new Error("All fields are mandatory!")
